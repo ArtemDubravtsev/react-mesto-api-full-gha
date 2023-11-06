@@ -1,0 +1,14 @@
+.popup__form-item {
+    border: 0;
+    padding: 0;
+    max-width: 358px;
+    width: 100%;
+    min-height: 27px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    outline: 0;
+}

@@ -1,6 +1,6 @@
 [![Статус тестов](../../actions/workflows/tests.yml/badge.svg)](../../actions/workflows/tests.yml)
 
-#ПР 15
+ПР 15
 
 # react-mesto-api-full
 
@@ -8,7 +8,7 @@
 
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
+Адрес репозитория: https://github.com/ArtemDubravtsev/react-mesto-api-full-gha.git
 
 ## Ссылки на проект
 

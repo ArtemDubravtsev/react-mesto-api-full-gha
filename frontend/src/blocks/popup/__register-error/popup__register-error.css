@@ -1,0 +1,9 @@
+.popup__register-error {
+  width: 120px;
+  height: 120px;
+  background-image: url("/src/images/regNO.svg");
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+}

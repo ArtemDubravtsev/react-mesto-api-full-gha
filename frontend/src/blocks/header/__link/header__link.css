@@ -1,0 +1,11 @@
+.header__link {
+  max-width: 114px;
+  max-height: 22px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  margin-top: 6px;
+}

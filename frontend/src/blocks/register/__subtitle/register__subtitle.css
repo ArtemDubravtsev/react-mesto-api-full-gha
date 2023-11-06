@@ -1,0 +1,14 @@
+.register__subtitle {
+  width: 100%;
+  max-width: 358px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(255, 255, 255, 1);
+  text-align: center;
+}

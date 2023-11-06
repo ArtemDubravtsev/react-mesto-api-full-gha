@@ -1,0 +1,10 @@
+.register__form-item {
+  border: 0;
+  padding: 0;
+  max-width: 358px;
+  width: 100%;
+  min-height: 27px;
+  border-bottom: 2px solid rgba(204, 204, 204, 1);
+  background: none;
+  color: white;
+}
