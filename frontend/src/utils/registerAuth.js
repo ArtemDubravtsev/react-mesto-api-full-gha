@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3000";
+const baseUrl = "http://api.artem.mesto.nomoredomainsmonster.ru";
 
 function getResponceData(res) {
   return res.ok
