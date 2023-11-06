@@ -14,6 +14,6 @@
 
 IP <158.160.13.215>
 
-Frontend https://...
+Frontend https://<artem.mesto.nomoredomainsmonster.ru>
 
-Backend https://...
+Backend https://<api.artem.mesto.nomoredomainsmonster.ru>
