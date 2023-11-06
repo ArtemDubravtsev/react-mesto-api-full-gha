@@ -88,7 +88,7 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: "http://api.artem.mesto.nomoredomainsmonster.ru",
+  baseUrl: "https://api.artem.mesto.nomoredomainsmonster.ru",
 });
 
 export default api;

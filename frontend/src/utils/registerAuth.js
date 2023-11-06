@@ -1,4 +1,4 @@
-const baseUrl = "http://api.artem.mesto.nomoredomainsmonster.ru";
+const baseUrl = "https://api.artem.mesto.nomoredomainsmonster.ru";
 
 function getResponceData(res) {
   return res.ok
