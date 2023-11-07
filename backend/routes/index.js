@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// const consoleLoggerMiddleware = require('../middlewares/consoleLoggerMiddleware')
 
 const usersRouter = require('./users');
 const cardsRouter = require('./cards');
@@ -12,5 +13,6 @@ router.use('/signin', signinRouter);
 router.use(auth);
 router.use('/users', usersRouter);
 router.use('/cards', cardsRouter);
+// router.use(consoleLoggerMiddleware);
 
 module.exports = router;
