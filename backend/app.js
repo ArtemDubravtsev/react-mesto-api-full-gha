@@ -9,7 +9,11 @@ const cors = require('cors');
 const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
+const { MONGO_DEV_URL, DEV_PORT } = require('./utils/constants');
+
+const PORT = process.env.NODE_ENV === 'production' ? process.env.PORT : DEV_PORT;
+
+const DB_URL = process.env.NODE_ENV === 'production' ? process.env.DB_URL : MONGO_DEV_URL;
 
 const app = express();
 
