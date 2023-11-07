@@ -17,7 +17,12 @@ const DB_URL = process.env.NODE_ENV === 'production' ? process.env.DB_URL : MONG
 
 const app = express();
 
-app.use(cors());
+const corsOptions = {
+  origin: 'https://movies-explorer.pna.nomoredomainsmonster.ru',
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
