@@ -1,9 +1,7 @@
 /* eslint-disable */
-
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
 const { addUser } = require('../controllers/users');
-// const urlValidation = require('../utils/constants');
 
 router.post(
   '/',
