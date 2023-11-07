@@ -18,7 +18,7 @@ const DB_URL = process.env.NODE_ENV === 'production' ? process.env.DB_URL : MONG
 const app = express();
 
 const corsOptions = {
-  origin: 'https://movies-explorer.pna.nomoredomainsmonster.ru',
+  origin: 'https://artem.mesto.nomoredomainsmonster.ru',
   credentials: true,
 };
 
