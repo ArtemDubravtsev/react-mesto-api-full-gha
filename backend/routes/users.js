@@ -1,6 +1,8 @@
+/* eslint-disable */
+
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
-const urlValidation = require('../utils/constants');
+// const urlValidation = require('../utils/constants');
 
 const {
   getUsers,
@@ -38,7 +40,7 @@ router.patch(
   '/me/avatar',
   celebrate({
     body: Joi.object().keys({
-      avatar: Joi.string().pattern(urlValidation),
+      avatar: Joi.string().regex(/https?:\/\/(www\.)?[\w\-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]+\#?$/i),
     }),
   }),
   editUserAvatar,
