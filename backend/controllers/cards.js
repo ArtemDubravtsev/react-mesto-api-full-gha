@@ -20,34 +20,12 @@ module.exports.addCard = (req, res, next) => {
 
 module.exports.deleteCard = (req, res, next) => {
   Card.findById(req.params.cardId)
+    .orFail(new NotFoundError('Карточка не найдена'))
     .then((card) => {
-      if (!card.owner.equals(req.user._id)) {
-        throw new ForbiddenError('Нет доступа для удаления карточки');
-      }
-      Card.deleteOne(card)
-        .orFail()
-        .then(() => {
-          res
-            .status(httpConstants.HTTP_STATUS_OK)
-            .send({ message: 'Карточка удалена' });
-        })
-        .catch((err) => {
-          if (err instanceof mongoose.Error.DocumentNotFoundError) {
-            next(new NotFoundError('Карточка не найдена'));
-          } else if (err instanceof mongoose.Error.CastError) {
-            next(new BadRequestError('Переданы некорректные данные'));
-          } else {
-            next(err);
-          }
-        });
+      if (card.owner.toString() !== req.user._id) return next(new ForbiddenError('Нет доступа для удаления карточки'));
+      return Card.deleteOne(card).then(() => res.send({ data: card }));
     })
-    .catch((err) => {
-      if (err.name === 'TypeError') {
-        next(new NotFoundError('Карточка не найдена'));
-      } else {
-        next(err);
-      }
-    });
+    .catch(next);
 };
 
 module.exports.getCard = (req, res, next) => {

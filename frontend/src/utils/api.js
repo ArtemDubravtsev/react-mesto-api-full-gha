@@ -4,7 +4,9 @@ class Api {
   }
 
   _getResponse(res) {
-    return res.ok ? res.json() : Promise.reject;
+    return res.ok
+      ? res.json()
+      : Promise.reject({ status: res.status, res: res });
   }
 
   getInfo(token) {
