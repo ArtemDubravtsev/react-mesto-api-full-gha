@@ -1,6 +1,6 @@
 [![Статус тестов](../../actions/workflows/tests.yml/badge.svg)](../../actions/workflows/tests.yml)
 
-ПР 15
+Проектная работа 15
 
 # react-mesto-api-full
 
