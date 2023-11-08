@@ -1,4 +1,3 @@
-/* eslint-disable */
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
 
@@ -38,7 +37,9 @@ router.patch(
   '/me/avatar',
   celebrate({
     body: Joi.object().keys({
-      avatar: Joi.string().regex(/https?:\/\/(www\.)?[\w\-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]+\#?$/i),
+      avatar: Joi.string().regex(
+        /https?:\/\/(www\.)?[\w\-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]+\#?$/i // eslint-disable-line
+      ),
     }),
   }),
   editUserAvatar,

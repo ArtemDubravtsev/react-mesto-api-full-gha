@@ -9,11 +9,16 @@ const cors = require('cors');
 const NotFoundError = require('./errors/NotFoundError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { MONGO_DEV_URL, DEV_PORT } = require('./utils/constants');
+const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
-const PORT = process.env.NODE_ENV === 'production' ? process.env.PORT : DEV_PORT;
-
-const DB_URL = process.env.NODE_ENV === 'production' ? process.env.DB_URL : MONGO_DEV_URL;
+mongoose
+  .connect(DB_URL)
+  .then(() => {
+    console.log("БД подключена"); // eslint-disable-line
+  })
+  .catch(() => {
+    console.log("Не удалось подключиться к БД"); // eslint-disable-line
+  });
 
 const app = express();
 
@@ -33,11 +38,6 @@ app.use(helmet());
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-mongoose.connect(DB_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
 
 app.use(requestLogger);
 

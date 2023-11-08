@@ -12,7 +12,7 @@ class Api {
   getInfo(token) {
     return fetch(`${this._url}/users/me`, {
       headers: {
-        Authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
     }).then(this._getResponse);
   }
@@ -20,7 +20,7 @@ class Api {
   getCards(token) {
     return fetch(`${this._url}/cards`, {
       headers: {
-        Authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
     }).then(this._getResponse);
   }
@@ -30,7 +30,7 @@ class Api {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         name: data.name,
@@ -44,7 +44,7 @@ class Api {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         avatar: data.avatar,
@@ -57,7 +57,7 @@ class Api {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({
         name: data.title,
@@ -74,7 +74,7 @@ class Api {
     return fetch(`${this._url}/cards/${cardId}/likes`, {
       method: method,
       headers: {
-        Authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
     }).then(this._getResponse);
   }
@@ -83,7 +83,7 @@ class Api {
     return fetch(`${this._url}/cards/${cardId}`, {
       method: "DELETE",
       headers: {
-        Authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
     }).then(this._getResponse);
   }

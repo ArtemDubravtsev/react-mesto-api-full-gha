@@ -1,4 +1,3 @@
-/* eslint-disable */
 const router = require('express').Router();
 const { celebrate, Joi } = require('celebrate');
 
@@ -17,7 +16,7 @@ router.post(
   celebrate({
     body: Joi.object().keys({
       name: Joi.string().required().min(2).max(30),
-      link: Joi.string().required().regex(/https?:\/\/(www\.)?[\w\-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]+\#?$/i),
+      link: Joi.string().required().regex(/https?:\/\/(www\.)?[\w\-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]+\#?$/i), // eslint-disable-line
     }),
   }),
   addCard,

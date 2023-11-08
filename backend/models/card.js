@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const urlValidation = require('../utils/constants');
 
 const cardSchema = new mongoose.Schema(
   {
@@ -14,7 +13,7 @@ const cardSchema = new mongoose.Schema(
       required: true,
       validate: {
         validator(v) {
-          return urlValidation.test(v);
+          return /https?:\/\/(www\.)?[\w\-\.\_\~\:\/\?\#\[\]\@\!\$\&\'\(\)\*\+\,\;\=]+\#?$/i.test(v); // eslint-disable-line
         },
         message: 'Введите URL',
       },
