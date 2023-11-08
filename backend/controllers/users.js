@@ -7,7 +7,8 @@ const BadRequestError = require('../errors/BadRequestError');
 const NotFoundError = require('../errors/NotFoundError');
 const ConflictError = require('../errors/ConflictError');
 
-const { SECRET_KEY } = process.env;
+const { NODE_ENV, SECRET_KEY } = process.env;
+const { SECRET_KEY_DEV } = require('../utils/constants');
 
 module.exports.getUsers = (req, res, next) => {
   User.find({})
@@ -107,7 +108,7 @@ module.exports.login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        process.env.NODE_ENV === 'production' ? SECRET_KEY : 'dev-secret',
+        NODE_ENV === 'production' ? SECRET_KEY : SECRET_KEY_DEV,
         {
           expiresIn: '7d',
         },
